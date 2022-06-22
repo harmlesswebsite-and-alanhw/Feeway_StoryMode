@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+      <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta name="description" content="Photoshopped Images by Paint" />
+	<script src="script.js"></script>
+    <title>Single Page Version by weeklyd3</title>
+	<style>
+	img {
+		max-width: 100%;
+	}
+	img[src="Morone-St-PROFILE-PHOTO.png"] {
+		width: 50%;
+	}
+	.big {
+		font-size: 20px;
+	}
+	iframe {
+		border: none;
+		overflow: hidden !important;
+	}
+	.progress {
+		background-color: gray;
+	}
+	.bar {
+		background-color: lime;
+		display: inline-block;
+	}
+	.newsfeeditem {
+		padding: 3px;
+		margin: 3px;
+		border: 2px solid;
+		background: rgb(135,206,235);
+		background: -moz-linear-gradient(0deg, rgba(135,206,235,1) 0%, rgba(176,196,222,1) 100%);
+		background: -webkit-linear-gradient(0deg, rgba(135,206,235,1) 0%, rgba(176,196,222,1) 100%);
+		background: linear-gradient(0deg, rgba(135,206,235,1) 0%, rgba(176,196,222,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#87ceeb",endColorstr="#b0c4de",GradientType=1); 
+	}
+	.newsfeedcontents {
+		white-space: pre-line;
+		border: 1px solid;
+	}
+	.newsfeed-owner {
+		font-style: italic;
+	}
+	.newsfeeditem h2 {
+		overflow-wrap: break-word;
+	}
+    #content-area {
+        max-height: 500px;
+        overflow: auto;
+        padding: 7px;
+        margin: 3px;
+        border: 1px solid;
+    } 
+        * { box-sizing: border-box; }
+	</style>
+	<meta name="introduction" content="no-reference" />
+  </head>
+  <body>
+      <form action="javascript:;" onsubmit="loadSmth(document.querySelector('input').value);">
+      <label>Location:<br />
+      <input style="box-sizing: border-box; width: 100%;" value="index.html" /></label>
+      </form>
+      <div id="content-area" style="position: relative;"></div>
+      <script>
+          function loadSmth(url, changeURL = true) {
+              if (changeURL) location.hash = url;
+              document.querySelector('#content-area').innerHTML = '<i>loading...</i>';
+              document.querySelector('input').value = new URL(url, "https://" + location.hostname).pathname.slice(1);
+              fetch(url)
+              .then(function(res) {
+                  return res.text();
+              })
+              .then(function(text) {
+                  const parser = new DOMParser;
+                  const doc = parser.parseFromString(text, 'text/html');
+                  if (doc.querySelector('title'))
+                  document.title = doc.querySelector('title').textContent;
+                  else document.title = '(no title)';
+                  document.getElementById('content-area').innerHTML = text;
+                  const scripts = doc.querySelectorAll('script');
+                  Array.from(scripts).forEach(function(s) {
+                      eval(s.innerHTML);});
+                  Array.from(document.querySelectorAll('a')).forEach(function(link) {
+                      link.addEventListener('click', function(ev) {
+                          ev.preventDefault();
+                          loadSmth(this.pathname.slice(1), true);
+                      })
+                  })
+              });
+          }
+          loadSmth('index.html', false);
+          if (location.hash.slice(1)) loadSmth(location.hash.slice(1));
+          window.onhashchange = function() {
+              console.log(location.hash.slice(1));
+              loadSmth(location.hash.slice(1), false); }
+      </script>

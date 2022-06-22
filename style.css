@@ -1,0 +1,56 @@
+body {
+    font-family: system-ui;
+}
+button, select, input, textarea {
+    font-size: inherit;
+    font-family: inherit;
+}
+@font-face {
+  font-family: Roadgeek;
+  src: url(roadgeekFont.ttf) format("truetype");
+}
+.highwaysign {
+    font-family: Roadgeek;
+    font-size: 30px;
+    border-radius: 3px;
+    padding: 7px;
+    display: inline-block;
+    color: white;
+}
+.exit-number {
+    background-color: #207357;
+    border-bottom: 2px solid;
+    border-radius: 3px;
+    display: block;
+    float: right;
+    padding: 3px;
+}
+.contents {
+    text-align: center;
+    background-color: #207357;
+    clear: both;
+    display: block;
+    padding: 7px;
+    border-radius: 3px;
+}
+.exit-number span {
+    display: inline-block;
+}
+.exit-number::after, .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.miles {
+    padding-top: 5px;
+    text-align: center;
+    display: block;
+    font-variant: small-caps;
+}
+.sign {
+    display: flex;
+    align-items: end;
+}
+.sign > div {
+    padding: 5px;
+}

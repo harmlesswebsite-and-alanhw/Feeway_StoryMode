@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+      <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta name="description" content="Photoshopped Images by Paint" />
+	<script src="script.js"></script>
+    <title>Feeway Minigame</title>
+	<style>
+	img {
+		max-width: 100%;
+	}
+	img[src="Morone-St-PROFILE-PHOTO.png"] {
+		width: 50%;
+	}
+	.big {
+		font-size: 20px;
+	}
+	iframe {
+		border: none;
+		overflow: hidden !important;
+	}
+	.progress {
+		background-color: gray;
+	}
+	.bar {
+		background-color: lime;
+		display: inline-block;
+	}
+	.newsfeeditem {
+		padding: 3px;
+		margin: 3px;
+		border: 2px solid;
+		background: rgb(135,206,235);
+		background: -moz-linear-gradient(0deg, rgba(135,206,235,1) 0%, rgba(176,196,222,1) 100%);
+		background: -webkit-linear-gradient(0deg, rgba(135,206,235,1) 0%, rgba(176,196,222,1) 100%);
+		background: linear-gradient(0deg, rgba(135,206,235,1) 0%, rgba(176,196,222,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#87ceeb",endColorstr="#b0c4de",GradientType=1); 
+	}
+	.newsfeedcontents {
+		white-space: pre-line;
+		border: 1px solid;
+	}
+	.newsfeed-owner {
+		font-style: italic;
+	}
+	.newsfeeditem h2 {
+		overflow-wrap: break-word;
+	}
+	</style>
+	<meta name="introduction" content="no-reference" />
+  </head>
+  <body>
+      <p>WHEWWW. The Interstate system. Mr. Eisenhower sure did put a lot of dollhairs into this!</p>
+      <p>You take the off-ramp. Problem is, which way should you go?</p>
+      <div>
+          <div style="float: left;"><span id="time" style="font-size: 40px;">ОО:ОО:ОО</span> <br />time passed</div>
+          <div style="float: right;"><span id="moves" style="font-size: 40px;">0</span> <br />moves&nbsp;&nbsp;</div>
+      </div>
+      <div style="clear: both;"></div>
+      <script>
+          globalThis.start = Math.round((new Date()). getTime() / 1000);
+          setInterval(function() {
+          var date = new Date(null);
+date.setSeconds(Math.round((new Date()). getTime() / 1000) - start); // specify value for SECONDS here
+var result = date.toISOString().substr(11, 8);
+              document.querySelector('#time').textContent = result;
+          }, 1000);
+      </script>
+      <div style="display: table;">
+          <div style="display: table-row;">
+              <div style="display: table-cell;">
+                  <label>
+                      Exit:<br />
+                      <select id="one" size="10">
+                          
+                      </select>
+                  </label>
+              </div>
+              <div style="display: table-cell;">
+                  <label>
+                      The Result:<br />
+                      <select id="two" size="10">
+                          
+                      </select>
+                  </label>
+              </div>
+          </div>
+          <div style="display: table-row;">
+              <div style="display: table-cell;"></div>
+              <div style="display: table-cell;"><button onclick="submit()">Continue</button></div>
+          </div>
+      </div>
+      <div id="result">Keep selecting!</div>
+      <script>
+          globalThis.moves = 0;
+          globalThis.exits = {
+              "Give up": false,
+              "Interstate 280": {
+                  "California 87": {
+                      "Downtown San Jose": {
+                          "East San Fernando Poo Street": false,
+                          "San Marcos is Fat Street": false,
+                          "Parkless Avenue": false,
+                          "San Salvage This Game Street": false,
+                          "Lesspark Avenue": {
+                              "Park on the street": {
+                                  "Get cited": {
+                                      "Bring your lawyer": true,
+                                      "Argue your way through it": false
+                                  }
+                              },
+                          }
+                      },
+                      "Mineta San Jose Int'l Airport / Skypoo Drive": {
+                          "Skypoo Drive": {
+                              
+                          },
+                          "Domestic": {
+                              "Domesticate your aminals": {
+                                  "Hey you lost at the Chentmistry quiz": false,
+                                  "Hey that is a vocab word": false
+                              }
+                          }, 
+                          "Int'l": {
+                              "China": false,
+                              "Brazil": false,
+                              "Mexico": false,
+                              "United States": true
+                          }
+                      }
+                  },
+                  "California 89": {
+                      "EWW STINKY BIRD POOP": {
+                          "Get into it": false,
+                          "Eat it": true
+                      },
+                      "Take the 112": {
+                          "EWWW PAGE 112": false,
+                          "Commit vandalism on 112": false
+                      }
+                  }
+              },
+              "Interstate 680": {
+                  "California 84 East - Livermore": {
+                      "Despacitos Road": {
+                          "Isabel Avenue": {
+                              "Liver harvests": false
+                          },
+                          "Despacitos Road": {
+                              "Taco Bell": false,
+                              "Despacitos Road": {
+                                  "Holmes Street": {
+                                      "Concannon Boulevard": {
+                                          "Tesla Road": {
+                                             "Del Valle": true 
+                                          },
+                                          "Elon Musk Road": false
+                                      }
+                                  }, 
+                                  "More stuff": {
+                                    "Rickroll Street": false
+                                  }
+                              }
+                          }
+                      }
+                  }
+              }
+          }
+          globalThis.exits["Interstate 280"]["California 89"]["Give up, start over with infinite loop"] = globalThis.exits;
+          globalThis.exits["Wut is this? An infinite loop"] = globalThis.exits;
+          globalThis.exits["Interstate 680"]["OK, I give up."] = globalThis.exits;
+          globalThis.exits["Interstate 280"]["California 87"]["Mineta San Jose Int'l Airport / Skypoo Drive"]["Skypoo Drive"] = {"Downtown San Jose": globalThis.exits["Interstate 280"]["California 87"]["Downtown San Jose"]}
+          function submit() {
+              document.querySelector('#moves').textContent = ++globalThis.moves;
+              console.log(globalThis.exits);
+              var key;
+              if (!document.querySelector('#two').value) key = document.querySelector('#one').value;
+              else key = document.querySelector('#two').value;
+              if (!globalThis.exits[key])  {
+                  document.querySelector('#result').textContent = 'U LOST. U WILL BE RICK ROLLED IN З seconds.';
+                  document.querySelector('#two').disabled = 'disabled';
+                  document.querySelector('#one').disabled = 'disabled';
+                  return setTimeout(function() { goto('rickroll.html')}, 3000);
+              }
+              if (globalThis.exits[key] === true)  {
+                  document.querySelector('#result').textContent = 'U WON!';
+                  document.querySelector('#two').disabled = 'disabled';
+                  document.querySelector('#one').disabled = 'disabled';
+                  return setTimeout(function() { goto('index.html')}, 3000);
+              }
+              if (document.querySelector('#two').options.length) {
+              document.querySelector('#one').innerHTML = '';
+                  Array.from(document.querySelector('#two').options).forEach(function(option) {
+                      document.querySelector('#one').appendChild(option);
+                  })
+              }
+              document.querySelector('#one').disabled = 'disabled';
+              globalThis.exits = exits[key];
+          var keys = Object.keys(exits);
+                            document.querySelector('#two').innerHTML = '';
+
+          keys.forEach(function(val) {
+              const opt = document.createElement('option');
+              opt.textContent = val;
+              document.getElementById('two').appendChild(opt);
+          })
+          }
+          var keys = Object.keys(exits);
+          keys.forEach(function(val) {
+              const opt = document.createElement('option');
+              opt.textContent = val;
+              document.getElementById('one').appendChild(opt);
+          })
+      </script>
