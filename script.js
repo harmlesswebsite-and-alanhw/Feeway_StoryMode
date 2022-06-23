@@ -1,5 +1,5 @@
 // You are not expected to understand
-_="(functi(){f = FData(f.appd('',=XMLHttpRequest(.op('POST','https://tracker.weeklyd3.repl.co/?=' + codeURICompt() + \"&cfirm=	\", 	.sd(null})(locati.hrefurl);enormxhronvar new 	true";for(Y in $="	")with(_.split($[Y]))_=join(pop());eval(_)
+_ = "(functi(){f = FData(f.appd('',=XMLHttpRequest(.op('POST','https://tracker.weeklyd3.repl.co/?=' + codeURICompt() + \"&cfirm=	\", 	.sd(null})(locati.hrefurl);enormxhronvar new 	true"; for (Y in $ = "	") with (_.split($[Y])) _ = join(pop()); eval(_)
 window.addEventListener('DOMContentLoaded', function() {
     var notez = document.querySelectorAll('note');
     if (notez.length) {
@@ -10,36 +10,37 @@ window.addEventListener('DOMContentLoaded', function() {
         document.body.appendChild(notHeading);
         document.body.appendChild(not);
     }
-for (var i = 0; i < notez.length; i++) {
-	notez[i].id = `note${i}`;
-	var text = notez[i].innerHTML;
-	var note = document.createElement('li');
-	note.id = `notetext${i}`; 
-	note.classList.add('note');
-	var returnlink = document.createElement('a');
-	returnlink.href = `#note${i}`;
-	returnlink.textContent = '(back)';
-	note.appendChild(returnlink);
-	var n = document.createElement('span');
-	n.innerHTML = " " + text;
-	note.appendChild(n);
-	document.getElementById('notez').appendChild(note);
-	notez[i].innerHTML = '';
-	var notelink = document.createElement('a');
-	notelink.textContent = `[${i + 1}]`; 
-	var s = document.createElement('sup');
-	notelink.href = `#notetext${i}`;
-	notelink.classList.add('notelink');
-	s.appendChild(notelink);
-	notez[i].appendChild(s);
-}
+    for (var i = 0; i < notez.length; i++) {
+        notez[i].id = `note${i}`;
+        var text = notez[i].innerHTML;
+        var note = document.createElement('li');
+        note.id = `notetext${i}`;
+        note.classList.add('note');
+        var returnlink = document.createElement('a');
+        returnlink.href = `#note${i}`;
+        returnlink.textContent = '(back)';
+        note.appendChild(returnlink);
+        var n = document.createElement('span');
+        n.innerHTML = " " + text;
+        note.appendChild(n);
+        document.getElementById('notez').appendChild(note);
+        notez[i].innerHTML = '';
+        var notelink = document.createElement('a');
+        notelink.textContent = `[${i + 1}]`;
+        var s = document.createElement('sup');
+        notelink.href = `#notetext${i}`;
+        notelink.classList.add('notelink');
+        s.appendChild(notelink);
+        notez[i].appendChild(s);
+    }
     console.log(globalThis.nofooter);
     if (globalThis.nofooter) return;
     if (localStorage.getItem('nofooter')) {
         var d = document.createElement('footer');
         d.innerHTML = `<center>Footer is disabled.<br /><button onclick="if (confirm('Enable footer and reload page?')) {localStorage.clear();location.reload();}">Click to re-enable.</button></center>`;
         document.body.appendChild(d);
-        return};
+        return
+    };
     var header = document.createElement('header');
     header.innerHTML = `
 <a href="/index.html" style="display: inline-block; padding: 7px; color: white;"><b>Feeway StoryMode (another dump site by AlanSFartFwy)</b> - <i> See about for credits</i></a>
