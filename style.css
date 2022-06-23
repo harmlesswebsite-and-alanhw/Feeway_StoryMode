@@ -47,7 +47,24 @@ button, select, input, textarea {
     display: block;
     font-variant: small-caps;
 }
-.sign {
+.signs {
     display: flex;
     align-items: end;
+}
+.detour > div {
+    background-color: orange;
+    color: black;
+}
+.announcement, .announcement > div {
+    letter-spacing: 1px;
+    font-size: 15px;
+    font-family: monospace;
+    background-color: black;
+    color: orange;
+    text-transform: uppercase;
+}
+.patch {
+    background-color: orange;
+    color: black;
+    font-size: 90%;
 }
