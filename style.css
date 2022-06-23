@@ -51,6 +51,3 @@ button, select, input, textarea {
     display: flex;
     align-items: end;
 }
-.sign > div {
-    padding: 5px;
-}

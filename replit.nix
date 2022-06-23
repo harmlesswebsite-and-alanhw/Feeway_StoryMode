@@ -1,0 +1,3 @@
+[hosting]
+route= "/"
+directory= "/"
