@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+      <link href="../../../style.css" rel="stylesheet" type="text/css" />
+	<script src="../../../script.js"></script>
+    <title>Bird Poop Road HOV lanes</title>
+  </head>
+  <body>
+      <img src="../../../img/hov.png" alt="HOV ramps" />
+      <p>You start driving on the HOV ramps until...</p>
+      <img src="../../../img/tollbooth.png" alt="A toll booth" />
+      <p>Quick! Quick! Quick! Let's ignore the PEE limit of 5 MPH and accelerate to 50 MPH!</p>
+      <noscript>You cannot use the widget below. Please go <a href="hov2.html">here</a> to continue.</noscript>
+      <div id="speeding">
+      <div>Ticket price if caught: <span id="dollhairs">0</span> dollhairs</div>
+          <span style="clear: both;"></span>
+      <span style="float: left; "><span id="speed" style="font-size: 3em;">0</span>&nbsp;&nbsp;&nbsp; <br />MPH&nbsp;&nbsp;&nbsp;</span>
+      <button onmousedown="globalThis.speedUp = true; globalThis.slowDown = false;" ontouchstart="globalThis.speedUp = true; globalThis.slowDown = false;" onmouseup="globalThis.speedUp = false; globalThis.slowDown = false;" ontouchend="globalThis.speedUp = false; globalThis.slowDown = false;" id="up">GAS PEDAL</button>
+      <div style="height: 2em;"></div>
+      <button onmousedown="globalThis.slowDown = true; globalThis.speedUp = false;" ontouchstart="globalThis.slowDown = true; globalThis.speedUp = false;" ontouchend="globalThis.speedUp = false; globalThis.slowDown = false;" onmouseup="globalThis.speedUp = false; globalThis.slowDown = false;" id="down">BRAKE</button>
+      <span style="clear: both;"></span>
+          <div id="goOn" hidden="hidden">50 MPH already? LET'S KEEP GOING TO 500!</div>
+      </div>
+      <div id="part2" hidden="hidden">
+          <p>Just as you were speeding along at <span id="twospeed"></span> MPH...</p>
+          <p>...you hear police sirens blaring out from behind you.</p>
+          <p>Police: <span id="fine"></span> dollhairs please for speeding</p>
+          <p>You have: 0 dollhairs</p>
+          <p>What do you do?</p>
+          <p>Your fine is due in an hour.</p>
+          <p>Hey, I know! Let's try to <a href="hov2.html">win the lottery</a>!</p>
+      </div>
+      <script>
+          globalThis.speed = 0;
+          globalThis.accel = 0.5;
+          globalThis.fine = 0;
+          setInterval(function() {
+              globalThis.fine = 50 * (Math.ceil((speed - 5) / 10) > 0 ? (Math.ceil((speed - 5) / 10)) : 0);
+              document.querySelector('#twospeed').textContent = speed;
+              if (speed > 50) document.querySelector('#goOn').hidden = '';
+              if (speed > 500)  {
+                  document.querySelector('#up').disabled = 'disabled';
+                  document.querySelector('#dollhairs').textContent = 'You have already been caught. Pay a lot of';
+                  document.querySelector('#down').disabled = 'disabled';
+                  document.querySelector('#goOn').hidden = 'hidden';
+                  console.log('OVER');
+              document.querySelector('#fine').textContent = fine;
+              document.querySelector('#part2').hidden = '';
+                  return;
+              }
+              document.querySelector('#dollhairs').textContent = fine;
+              console.log(globalThis.speedUp, globalThis.slowDown);
+              if (globalThis.speedUp) {
+                  globalThis.speed += Math.round(globalThis.accel);
+                  globalThis.accel += 0.25;
+                  document.querySelector('#speed').textContent = speed;
+                  return;
+              } 
+              if (globalThis.slowDown) {
+                  globalThis.speed = globalThis.speed - Math.round(globalThis.accel);
+                  if (globalThis.speed < 0) globalThis.speed = 0;
+                  globalThis.accel += 0.25;
+                  document.querySelector('#speed').textContent = speed;
+                  return;
+              }
+              globalThis.accel -= 0.25;
+              globalThis.speed -= 0.5;
+              globalThis.speed = Math.floor(globalThis.speed);
+              if (globalThis.accel < 0) globalThis.accel = 0.5;
+              if (globalThis.speed < 0) globalThis.speed = 0;
+              document.querySelector('#speed').textContent = speed;
+          }, 250);
+      </script>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    &#x202e;
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+      <script src="../script.js"></script>
+    <title>San Fernando Poo Street</title>
+  </head>
+  <body>
+    <p><a href="index.html">BACK</a></p>&#x202e;
+      
+      <bdo>
+    <p>&#x202e;This is a cool map&#x202e;</p>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.min.css" integrity="sha512-oIQ0EBio8LJupRpgmDsIsvm0Fsr6c3XNHLB7at5xb+Cf6eQuCX9xuX8XXGRIcokNgdqL1ms7nqbQ6ryXMGxXpg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.min.js" integrity="sha512-TL+GX2RsOUlTndpkgHVnSQ9r6zldqHzfyECrdabkpucdFroZ3/HAhMmP2WYaPjsJCoot+0McmdPOLjmmicG9qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+      &#x202e;<div style="height: 400px; display: flex;">
+          <div style="width: 20%;"></div>
+      <div id="map" style="resize: both; height: 100%; transform: perspective(250px) rotateX(20deg); width: 60%;"></div>
+          <div style="width: 20%;"></div>
+      </div>&#x202e;
+      <div></div><br />
+      <div></div><br />
+      <div></div><br />
+      <script>
+          var map = L.map('map').setView([37.333682233903176, -121.8885451881097], 14);
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 666,
+    attribution: '© <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+}).addTo(map);
+      </script>
+      <p>&#x202e;here is some secret text that might help.&#x202e;</p>
+      <div>
+      </div>
+      </bdo>
+      &#x202e;
+  </body>
+  &#x202e;

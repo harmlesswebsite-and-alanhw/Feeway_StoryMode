@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+      <script src="../script.js"></script>
+    <title>Bowser Avenue</title>
+  </head>
+  <body>
+    <p>Hey, it looks like we have reached Dangstroff Avenue.</p>
+    <div class="signs">
+    <div class="highwaysign">
+<div class="exit-number"><span>ехit 400</span></div>
+    <div class="contents">S. Dangstoff Avenue<div></div>
+    <div class="miles"><img src="../666/exitonlydown.svg" alt="Left Lane" /></div>
+    </div></div></div>
+    <p>Aw DANG! I guess you need to answer a question before you move on</p>
+  <center id="play1">
+<img src="https://alanhw.weeklyd3.repl.co/dangstorffandleland.png" alt="Yellow fake square lights at the intersection of S Dangstorff Ave and Leland Ave" />
+          <div style="font-size: 55px;"><strong>What are these lights called</strong>?</div>
+          <div style="font-size: 30px;">
+          <button onclick="lose()" style="font-size: 30px;">Round Square Lights</button>
+          <button onclick="lose()" style="font-size: 30px;">Sad Square lights</button>
+          <button onclick="this.parentNode.parentNode.style.display = 'none'; document.getElementById('play2').hidden = '';" style="font-size: 30px;">Fake Square Lights</button>
+      </div>
+      </center>
+      <script>
+          function lose() {
+              document.body.textContent = 'YOU LOST. Redirecting to start in З seconds.';
+              setTimeout(function() { location.href = '/alanhw133.html';}, 3000);
+          }
+      </script>
+  </body>
+        <center id="play2" hidden="hidden">
+                                             <div style="font-size: 55px;">Are These Square Lights Actually Yellow?</div>
+      <button onclick="lose()">No</button>
+          <button onclick="lose()">No</button>
+          <div style="height: 100vh;">&nbsp;</div>
+          <button style="font-size: 3px; padding: 0; border: none; background-color: transparent;" onclick="this.parentNode.hidden = 'hidden'; document.getElementById('play3').style.display = 'block';">УЕЅ</button>
+      </center>
+      <center id="play3" style="display: none;">
+          Where is the sad fake Square light at<br />
+          Its at the intersection of <input placeholder="Leland" size="6" id="nickbutt" />avenue and main street
+          <!-- correct answer: Buttom --><br />
+          <button onclick="bottom()">Soobmit</button>
+      </center>
+      <script>
+          function bottom() {
+              if (document.getElementById('nickbutt').value.toLowerCase() !== "porter") {
+                  lose();
+              } else {
+                  document.getElementById('play3').style.display = 'none';
+                  location.href = '/university.html';
+              }
+          }
+      </script>

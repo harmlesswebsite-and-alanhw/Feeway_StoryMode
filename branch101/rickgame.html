@@ -1,0 +1,91 @@
+             <script>globalThis.nofooter = true</script>
+
+      <div id="instructions">
+ <h1>DESTROY BOWSER BY</h1>
+      <ul>
+  <li>attack bowser 7 times</li>
+  <li>you have 10 seconds for this</li>
+      </ul>
+          <button onclick="loadLevel(); document.getElementById('game').style.display = 'block'; document.getElementById('instructions').hidden = 'hidden';">Start!</button>
+      </div>
+      <center id="game" hidden="hidden">
+      <div id="game-root" style="font-size: 55px;"></div>
+      <button onclick="catchR()">ATTACK</button>
+      <button onclick="pass()">THROW AWAY</button>
+      </center>
+      <center>
+          <span id="right">0</span> right,
+          <span id="wrong">0</span> wrong,
+          <span id="ricksl">7</span> Attacks left
+      </center>
+      <div id="image-cache" style="display: none;">
+          <img src="../bowser.jpeg" alt="" />
+          <img src="../rick.gif" alt="" />
+      </div>
+  </body>
+  <script>
+    const totalRicks = 7;
+globalThis.ricksLeft = 7;
+    const timeoutForLevels = 5000;
+    const probabilityOfGettingWrong = 0.6;
+      globalThis.right = 0;
+      globalThis.wrong = 0;
+    function loadLevel() {
+        var rick = Math.random();
+        if (rick < probabilityOfGettingWrong) {
+            globalThis.rick = false;
+            document.getElementById('game-root').innerHTML = '<img src="../rick.gif" alt="Rick astley" />';
+        } else {
+            globalThis.rick = true;
+            document.getElementById('game-root').innerHTML = '<img src="../bowser.jpeg" alt="bowser" />';
+        }
+        globalThis.t = setTimeout(function() {
+            location.href = '../rickroll30.html';
+        }, timeoutForLevels);
+    }
+      function endgame() {
+          document.getElementById('game').hidden = 'hidden';
+          if (globalThis.right / (globalThis.right + globalThis.wrong) < 0.6) {
+              window.parent.postMessage('faliure', '*');
+          } else {
+              window.parent.postMessage('success', '*');
+          }
+      }
+      function catchR() {
+          clearTimeout(globalThis.t);
+          if (globalThis.rick) {
+              globalThis.right++;
+              document.getElementById('right').textContent = globalThis.right;
+              globalThis.ricksLeft--;
+              document.getElementById('ricksl').textContent = globalThis.ricksLeft;
+          } else {
+              globalThis.wrong++;
+
+              document.getElementById('wrong').textContent = globalThis.wrong;
+              window.parent.postMessage('rick', '*');
+              return location.href = '../rickroll30.html';
+          }
+          if (!globalThis.ricksLeft) {
+              return endgame();
+          }
+          loadLevel();
+      }
+      function pass() {
+          clearTimeout(globalThis.t);
+          if (!globalThis.rick) {
+              globalThis.right++;
+          } else {
+              window.parent.postMessage('rick', '*');
+              return location.href = '../rickroll30.html';
+              globalThis.ricksLeft--;
+              document.getElementById('ricksl').textContent = globalThis.ricksLeft;
+              globalThis.wrong++;
+          }
+          document.getElementById('right').textContent = globalThis.right;
+          document.getElementById('wrong').textContent = globalThis.wrong;
+          if (!globalThis.ricksLeft) {
+              return endgame();
+          }
+          loadLevel();
+      }
+  </script>

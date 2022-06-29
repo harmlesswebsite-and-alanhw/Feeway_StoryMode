@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link href="../../style.css" rel="stylesheet" type="text/css" />
+      <script src="../script.js"></script>
+    <title>BWAHAHAHAHA</title>
+  </head>
+    <body>
+        <p>Did you know that <del>13 is unlucky</del> <ins>13 happens pretty much equally on all seven days</ins>? Don't be a morone!</p>
+        <pre>Loading...</pre>
+        <script>
+            fetch('../movie.txt')
+            .then((res) => res.text())
+            .then(function(text) {
+                const t = text.split("\n");
+                t.shift();
+                t.shift();
+                t.shift();
+                var te = [];
+                setInterval(function() {
+                    if (globalThis.skip) return;
+                    var te = [];
+                    for (var i = 0; i < 11; i++) {
+                        if (i !== 10) te.push(t.shift());
+                        else t.shift();
+                    }
+                    if (t.length === 0) globalThis.skip = true;
+                    document.querySelector('pre').textContent = te.join("\n");
+                }, 2000);
+            })
+        </script>

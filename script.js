@@ -43,10 +43,10 @@ window.addEventListener('DOMContentLoaded', function() {
     };
     var header = document.createElement('header');
     header.innerHTML = `
-<a href="/index.html" style="display: inline-block; padding: 7px; color: white;"><b>Feeway StoryMode (another dump site by AlanSFartFwy)</b> - <i> See about for credits</i></a>
+<a href="/index.html" style="display: inline-block; padding: 7px; color: white;"><b><img src="/moronest.png" alt="Morone Street" height="25" /> Feeway StoryMode (another dump site by AlanSFartFwy)</b> - <i> See about for credits</i></a>
 <a href="javascript:history.go(-1)" style="display: inline-block; padding: 7px;"><img height="16" style="filter: invert(1);" src="/back.svg" alt="Go back" /></a>
 <a href="/search.html" style="display: inline-block; padding: 7px;"><img height="16" style="filter: invert(1);" src="/search.svg" alt="Search" /></a>
-<a href="/about.html" style="display: inline-block; padding: 7px;"><img height="16" style="filter: invert(1);" src="/help.svg" alt="About/Contact" /></a>
+<a href="/about.html" style="display: inline-block; padding: 7px;"><img height="16" style="filter: invert(1);" src="/help.svg" alt="About/Contact" /></a><img src="/moronest.png" alt="Morone Street" height="25" /> 
 `;
     header.style.backgroundColor = 'black';
     header.style.color = 'white';
@@ -61,7 +61,7 @@ window.addEventListener('DOMContentLoaded', function() {
     footer.style.color = 'black';
     footer.innerHTML = `
 <div style="margin: 2px; font-variant: small-caps;"><b>FeewayStoryMode</b></div>
-<div style="margin: 2px;"><a href="index.html">Home</a></div>
+<div style="margin: 2px;"><a href="https://feewaystorymode.alansfartfwy.repl.co/index.html">Home</a></div>
 <div style="margin: 2px;"><a href="https://alanhw.weeklyd3.repl.co/alanhw.html">Alanhw</a></div>
 <div style="margin: 2px;"><a href="https://escape-maze.weeklyd3.repl.co/">Escape Maze</a></div>
 <div style="margin: 2px;"><a href="https://wiki.weeklyd3.repl.co">Feeway Wiki</a></div>
@@ -71,10 +71,10 @@ window.addEventListener('DOMContentLoaded', function() {
 <div style="margin: 2px;"><a href="https://github.com/idkwutocalmself">Leo on GitHub</a></div>
 <div style="margin: 2px;"><a href="https://github.com/weeklyd3">Timmy on GitHub</a></div>
 <div style="margin: 2px; font-variant: small-caps;"><b>Rick rolls</b></div>
-<div style="margin: 2px;"><a href="alanhw133.html">Original rick roll</a></div>
+<div style="margin: 2px;"><a href="feewaystorymode.alansfartfwy.repl.co/rickroll.html">Original rick roll</a></div>
 <div style="margin: 2px;"><a href="https://alanhw.weeklyd3.repl.co/alanhw133.html">Alanhw Rickroll</a></div>
-<div style="margin: 2px;"><a href="schoology.html">Hey we have homework</a></div>
-<div style="margin: 2px;"><a href="https://alanhw.weeklyde.repl.co/weird-traffic-lights.html">With a fake preview</a></div>
+<div style="margin: 2px;"><a href="https://storymode.alansfartfwy.repl.co/schoology.html">Hey we have homework</a></div>
+<div style="margin: 2px;"><a href="https://storymode.alansfartfwy.repl.co/scamtown.html">Some awesome stuff</a></div>
 <div style="margin: 2px;"><button onclick="hidefooter()">Suppress header and footer</button></div>
 `
     document.body.appendChild(footer);
