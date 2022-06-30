@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+      <script src="../script.js"></script>
+    <title>WILLOW ROAD DARKNESS</title>
+  </head>
+  <body style="background-color: black; color: white;">
+    <p>You continue on Willow, when everything turned black. There was no road in the first place, and there was no you. The noises made creepy feelings in the darkness</p>
+<fieldset>
+    <legend>When all but one of the options are the same</legend>
+    <div id="quiz">
+    <label><input name="radio" type="radio" /> ...you pick the different one.</label>
+    <label><input name="radio" type="radio" /> ...you pick the different one.</label>
+    <label><input name="radio" type="radio" /> ...you pick the different one.</label>
+    <label><input name="radio" type="radio" /> ...you pick the different one.</label>
+    <p style="color:grey;"><label><input name="radio" type="radio" asdf='asdf' /> and the random one was a rickroll</label></p>
+    </div>
+</fieldset>
+      <p><small>And finally we get inverted colors once.</small></p>
+  <script>
+      Array.from(document.querySelectorAll('[type=radio]')).forEach(function(button) {
+          if (button.getAttribute('asdf')) return button.onclick = function() {document.querySelector('#quiz').textContent = 'Wow u found it'; setTimeout(() => location.href = 'willowlight.html', 3000);};
+          button.onclick = function() {
+              document.querySelector('#quiz').textContent = 'Dude. That is hippopocrisy. Get rickrolled';
+              setTimeout(() => location.href = '/rickroll30.html', 3000);
+          }
+      })
+  </script>
+      <p>Do you wanna listen to the radio?</p>
+    <pre style="color: cyan; background-color: black; font-size: 125%;">
+FM Radio - <strike>CD</strike> <strike>Redtooth</strike> <strike>Bluetooth</strike> <strike>XM</strike> <strike>AM</strike>
+─────────────────────────────────────────────────────
+<span id="taitl">Nothing playing</span>
+──────────────────────────────────────────────────────────
+<button onclick="document.querySelector('audio#g').pause();document.querySelector('#taitl').textContent = 'FM 66.6 - Rick Astley - Never Gonna Give You Up'; document.querySelector('audio').play();" style="padding: 0; margin: 0;border: none; background-color: inherit; color: inherit;">FM 66.6</button> <button onclick="document.querySelector('audio').pause();document.querySelector('#taitl').textContent = 'FM 88.8 - Dick Assley - Gonna Give You Up'; document.querySelector('audio#g').play();" style="padding: 0; margin: 0;border: none; background-color: inherit; color: inherit;">FM 88.8</button></pre>
+<audio hidden="hidden" src="../Rickroll.mp3" loop="loop"></audio>
+<audio hidden="hidden" src="../gonnagiveyouup.mp3" id="g" loop="loop"></audio>
+  </body>

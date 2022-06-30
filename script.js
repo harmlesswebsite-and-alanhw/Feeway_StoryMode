@@ -80,7 +80,7 @@ window.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(footer);
     const links = document.createElement('footer');
     links.style.fontFamily = 'monospace';
-    links.innerHTML = `Page tools: [<a href="https://replit.com/@weeklyd3/alanhw#" id="editThisPage">edit this page</a>] [<a href="https://github.com/harmlesswebsite-and-alanhw/alanhw/edit/master" id="editgithub">edit on github</a>] [<a href="https://cs.github.com/harmlesswebsite-and-alanhw/alanhw?q=href%20" id="whatlinkshere">whatlinkshere (github)</a>] [<a href="https://cs.github.com/harmlesswebsite-and-alanhw/alanhw?q=" id="whatlinksheref">fuzzy whatlinkshere (github)</a>]`;
+    links.innerHTML = `Page tools: [<a href="https://replit.com/@AlanSFartFwy/Feeway_StoryMode#" id="editThisPage">edit this page</a>] [<a href="https://github.com/harmlesswebsite-and-alanhw/Feeway_StoryMode/edit/master" id="editgithub">edit on github</a>] [<a href="https://cs.github.com/harmlesswebsite-and-alanhw/Feeway_StoryMode?q=href%20" id="whatlinkshere">whatlinkshere (github)</a>] [<a href="https://cs.github.com/harmlesswebsite-and-alanhw/Feeway_StoryMode?q=" id="whatlinksheref">fuzzy whatlinkshere (github)</a>]`;
     links.querySelector('#editThisPage').href += " " + window.location.pathname.slice(1);
     links.querySelector('#editgithub').href += location.pathname;
     links.querySelector('#whatlinkshere').href += encodeURIComponent(decodeURIComponent(window.location.pathname.slice(1)));
