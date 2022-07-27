@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+      <script src="../script.js"></script>
+    <title>Sus Gas</title>
+  </head>
+  <body>
+    <p>You drove so fast you are now in the city of Oakland. You see a queer smell.</p>
+    <p>Hrmmm it kinda stinks here.</p>
+    <img src="https://alanhw.weeklyd3.repl.co/stinky.png" alt="It kinda stinks here">
+    <p>The smell gets so strong its un<strong>bear</strong>able to get any farther</p>
+    <p><small>Well yes, it did kinda smell like a stinky bear so yeah</small></p>
+    <p>Oh no, you need oxygen to breathe. You need 18 points of O2 in order to pass this intersection</p>
+    <p>put on this gas mask to continue</p>
+    <a class="fakebutton" href="gassy.html" style="font-size: 20px;">Put the Gas Mask On</a>
+	  <p>And also, someone is swearing on the radio</p>
+   <!-- weeklyd3 did this. Don't tell my mom. -->
+	  <!-- No wikipedia is WP:NOTCENSORED
+	  and neither are we -->
+	  <p>OK, so in the <strong id="swear">????</strong> station, there is this <strong id="swear">????</strong> monke eating all the sh!t from the restrooms</p>
+   <script>
+	   
+	   Array.prototype.random = function () {
+  return this[Math.floor((Math.random()*this.length))];
+}
+Array.from(document.querySelectorAll('#swear')).forEach(function(thing) {
+	// prick means penis btw
+		   thing.textContent = ['fцcкing', 'sh!tty', 'motherfucking', 'asshole', 'prick', 'penis'].random();
+	   })
+   </script>

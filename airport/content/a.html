@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+      <link href="../../../style.css" rel="stylesheet" type="text/css" />
+	<script src="../../../script.js"></script>
+	  <script src="../screen.js"></script>
+    <title>Airport Security</title>
+  </head>
+  <body>
+	  <h1>Airport security</h1>
+	  <p>You go past and see this:</p>
+	  <div class="screen" id="scr"></div>
+	  <script>const s = new Screen(document.querySelector('#scr'));
+	  (async () => {
+		  s.print("Loading files...");
+		  await s.wait(1);
+		  s.printf("Please tell the guy how much luggage you have: ");
+		  const luggage = Number(await input("Enter how much luggage you have."));
+		  if (luggage !== luggage) {
+			  s.print('Seriously? Rick rolling you in з seconds.');
+			  setTimeout(() => location.href = 'rickrollairport.html', 3000);
+			  return;
+		  }
+		  s.print(luggage);
+		  if (luggage < 2) {
+			  s.print('Seriously? I see you have a lot of luggage.');
+			  s.print('Stop lying.');
+			  s.printh('<span style="color: red;">LIE DETECTED. YOU WILL BE RICK ROLLED IN З SECONDS.</span>');
+			  setTimeout(() => {
+				  s.print("RICK ROLLING YOU NOW.");
+				  location.href = '/rickrollairport.html';
+			  }, 3000);
+			  return;
+		  }
+		  s.print("Here are the rules for luggage pricing.");
+		  s.print("* The first item is free.");
+		  s.print("* Each item beyond that costs $888.");
+		  s.print("\nRedirecting to payment in з seconds.");
+		  await s.wait(3);
+		  if (!((await input("Please type anything starting with 'y' here to confirm you know the rules:")).toLowerCase().startsWith('y'))) {
+			  s.print("You did not agree.");
+			  s.print("+----------------------------+");
+			  s.print('|                            |');
+			  s.print('|                            |');
+			  s.print('|                            |');
+			  s.print('|                            |');
+			  s.print('|                            |');
+			  s.print('|          BAI BAI!          |');
+			  s.print('|                            |');
+			  s.print('|                            |');
+			  s.print('|                            |');
+			  s.print('|                            |');
+			  s.print('|                            |');
+			  s.print("+----------------------------+");
+			  await s.wait(3);
+			  s.print("You did not agree to the terms. Thank you for, err... getting scammed by us.");
+			  setTimeout(() => location.href = '/rickroll30.html', 3000);
+		  }
+		  s.print("You agreed to the terms.");
+		  s.print("Calculating your price...");
+		  s.print(`You should pay ${(luggage - 1) * 888} dollhairs.`);
+		  s.print('Getting payment info...');
+		  await s.wait(1);
+		  if ((await input("Enter the code you received earlier at the scrambled text on 101")) !== '3328') {
+			  s.print(`WRONG. Rick rolling in З seconds.`);
+			  await s.wait(3);
+			  location.href = '/rickroll40.html';
+			  return;
+		  }
+		  s.print('Processing... DO NOT REMOVE CARD EVEN THOUGH THERE IS NO CARD');
+		  await s.wait(1);
+		  s.print('Approved, thank you!');
+		  s.print('Printing out receipt...');
+		  await s.wait(1);
+		  s.print('--------------- ur receipt');
+		  const price = (luggage - 1) * 888;
+		  s.print('Free luggage x1         $0');
+		  var leftNumber = String(luggage - 1);
+		  if (leftNumber.length > 2) leftNumber = 'LOTS';
+		  const totalLength = '--------------- ur receipt'.length;
+		  const left = `Paid luggage x${leftNumber}`;
+		  s.print(left + " " + ("$" + (price )).padStart(totalLength - left.length - 1));
+		  s.print('THANK YOU FOR SHOPPING W/ ');
+		  s.print('US. HAVE A GR8 DAY. (SCAM)');
+		  s.print("\nAll right, let's do this.");
+		  s.print("Hecking and receiving luggage...");
+		  for (var i = 0; i < luggage * 4; i++) {
+			  s.print(`Completed ${i} tasks of ${luggage * 4} (${Math.ceil(100 * i / luggage / 4)} percent)`);
+			  if (!(i % 4)) s.printh(`| <span style="color: red;">Check item ${Math.ceil(i / 4)}</span>`);
+			  if ((i % 4) === 1) s.printh(`\\ <span style="color: lime;">Scan item ${Math.ceil(i / 4)}</span>`)
+			  if ((i % 4) === 2) s.printh(`- <span style="color: gold;">Register item ${Math.round(i / 4)}</span>`);
+			  if ((i % 4) === 3) s.printh(`/ <span style="color: blue;">Send item ${Math.round(i / 4)}</span>`);
+			  await s.wait(Math.random());
+			  s.delLast(2);
+			  if ((i % 4) === 3) s.printh(`✓ <span style="color:green;">Sent item #${Math.round(i / 4)} to aircraft</span>`);
+		  }
+		  s.print(`Scanning human player...`);
+		  s.print(`Nothing weird found`);
+		  s.print(`Bye for now!`);
+		  await s.wait(1);
+		  location.href = 'b.html';
+	  })();
+	  </script>
+  </body>
+</html>

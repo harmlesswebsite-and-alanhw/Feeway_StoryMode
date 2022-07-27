@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+      <script src="../script.js"></script>
+    <title>WILLOW ROAD DARKNESS</title>
+      <style>
+          .submitButton {
+              width: 50px;  
+              height: 50px;
+              border-radius: 10px;
+              background-color: red;
+              border: 2px dotted white;
+          }
+          </style>
+  </head>
+  <body style="background-color: black; color: white;">
+      <noscript>You can't play this. Go <a href="willowdoors.html">here</a> to continue.</noscript>
+    <p>Uh oh, turns out you need to open a code to activate the light source, which turns out to be a very angry square light. Be quick, because ur keys will fade away to darkness</p>
+    <div style="font-size: 40px;" id="typethis"></div>
+      <div style="font-size: 40px;" id="type"></div>
+      <div style="font-size: 40px;" id="typed"></div>
+    <script>
+        Array.prototype.random = function() {
+            var item = this[Math.floor(Math.random()*this.length)];
+            return item;
+        }
+        for (var i = 0; i < 20; i++) document.querySelector('#typethis').textContent += [1, 2, 3, 4, 5].random();
+        globalThis.str = document.querySelector('#typethis').textContent;
+        function submitButton(string) {
+            document.querySelector('#typed').textContent += string;
+            string = string + "";
+            if (!globalThis.str.startsWith(string)) {
+                location.href = '/rickroll30.html';
+            }
+            globalThis.str = globalThis.str.slice(string.length);
+            if (!str) location.href = 'willowdoors.html';
+            this.classList.add('fadeout');
+        }
+        function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle.
+  while (currentIndex != 0) {
+
+    // Pick a remaining element.
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
+        const buttonOrder = shuffle([1, 2, 3, 4, 5]);
+        buttonOrder.forEach(function(num) {
+            const button = document.createElement('button');
+            button.classList.add('submitButton');
+            button.addEventListener('click', function() {
+                submitButton.bind(this)(this.textContent);
+
+            });
+                button.textContent = num;
+                document.body.appendChild(button);
+        });
+        document.onkeydown = function(ev) {
+            if ([1, 2, 3, 4, 5].includes(parseInt(ev.key))) submitButton(ev.key);
+        }
+    </script>
+    <style>
+        .fadeout {
+            animation: fade 2s; 
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }        #typethis.thiswillreturnzeroresults {
+            animation: fade 2s; 
+            animation-delay: 10s;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+        }
+       #typed {
+            animation: fadein 2s; 
+            animation-delay: 10s;
+            animation-duration: 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+           opacity: 0;
+        }
+        @keyframes fade {
+            0%   {opacity: 1;}
+            100% {color: transparent;}
+        }
+        @keyframes fadein {
+            0%   {opacity: 0;}
+            100% {opacity: 1;}
+        }
+    </style>

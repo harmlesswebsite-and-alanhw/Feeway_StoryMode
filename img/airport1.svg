@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="213.50925mm"
+   height="124.81179mm"
+   viewBox="0 0 213.50925 124.81179"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="airport1.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.4334287"
+     inkscape:cx="313.7771"
+     inkscape:cy="381.83904"
+     inkscape:window-width="1920"
+     inkscape:window-height="995"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <rect
+       x="-30.248756"
+       y="132.14011"
+       width="455.19562"
+       height="160.33282"
+       id="rect608" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(7.9494061,-34.667984)">
+    <rect
+       style="fill:#ffffff;stroke-width:0.447833"
+       id="rect236"
+       width="213.50925"
+       height="124.58633"
+       x="-7.9494061"
+       y="34.667984" />
+    <text
+       xml:space="preserve"
+       transform="scale(0.26458333)"
+       id="text606"
+       style="font-size:40px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';text-align:center;white-space:pre;shape-inside:url(#rect608);fill:#000000;stroke-width:1.88976"
+       x="-131.18652"
+       y="0"><tspan
+         x="37.867188"
+         y="167.53125"
+         id="tspan1543"><tspan
+           style="fill:#ff0000"
+           id="tspan1541">DO NOT ENTER 
+</tspan></tspan><tspan
+         x="95.132812"
+         y="217.53125"
+         id="tspan1547"><tspan
+           style="fill:#ff0000"
+           id="tspan1545">EXIT ONLY</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:10.5833px;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';text-align:center;text-anchor:middle;fill:#ff0000;stroke-width:0.499999"
+       x="144.54147"
+       y="44.808426"
+       id="text718"><tspan
+         sodipodi:role="line"
+         id="tspan716"
+         style="fill:#00ff00;stroke-width:0.5"
+         x="144.54147"
+         y="44.808426">ENTER GATE 6</tspan><tspan
+         sodipodi:role="line"
+         style="fill:#00ff00;stroke-width:0.5"
+         x="144.54147"
+         y="58.037552"
+         id="tspan720">HERE</tspan></text>
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.499999"
+       id="rect774"
+       width="76.430191"
+       height="94.863724"
+       x="11.506543"
+       y="64.366051" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.499999"
+       id="rect776"
+       width="78.346649"
+       height="95.723961"
+       x="107.41261"
+       y="63.028866" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.499999"
+       d="M 21.463731,151.47192 C 6.4775115,149.74137 11.891374,138.2368 27.200647,131.4996 l 0.517505,13.52978"
+       id="path1309"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.499999"
+       d="m 27.605386,144.78265 -0.340963,-13.45282 1.301332,0.21039 2.290741,4.56064 2.324233,9.32703"
+       id="path1407" />
+    <path
+       style="fill:#999999;stroke:#000000;stroke-width:0.499999"
+       d="m 21.632886,151.24738 58.637903,-0.11614 6.15555,7.69604 -72.464315,0.17837 z"
+       id="path897-3" />
+    <path
+       style="fill:#666666;stroke:#000000;stroke-width:0.499999"
+       d="m 23.052152,151.17588 2.804985,-4.01668 2.281213,-2.52621 1.284451,-0.26945 0.289351,0.0421 44.257529,-0.1623 1.125476,0.32003 2.403711,2.78425 1.091483,3.4981 -55.043445,0.53807 z"
+       id="path1179" />
+    <path
+       style="fill:#666666;stroke:#000000;stroke-width:0.499999"
+       d="m 25.677641,147.11588 51.041891,-0.17846"
+       id="path1307" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.499999"
+       d="m 81.407684,152.28474 h 0.986568 l 1.739627,-1.68364 0.843542,-2.43378 0.624102,-3.32641 0.27437,-2.56752 -0.05599,-2.87664 -1.879465,-1.33736 -2.242995,-1.1142 -3.709045,-0.7581 -3.274669,0.11171 -1.524428,1.80411 -1.904143,1.98958 -0.761817,2.65853 -0.04299,0.9473"
+       id="path1409" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.499999"
+       d="m 75.412395,144.58803 0.390327,-8.23138"
+       id="path1411" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.499999"
+       d="m 116.82883,151.11464 c -14.98622,-1.73055 -9.57236,-13.23512 5.73692,-19.97232 l 0.5175,13.52978"
+       id="path1309-6"
+       sodipodi:nodetypes="ccc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.499999"
+       d="m 122.97049,144.42537 -0.34097,-13.45282 1.30134,0.21039 2.29074,4.56064 2.32423,9.32703"
+       id="path1407-7" />
+    <path
+       style="fill:#999999;stroke:#000000;stroke-width:0.499999"
+       d="m 116.99799,150.8901 58.6379,-0.11614 6.15555,7.69604 -72.46432,0.17837 z"
+       id="path897-3-5" />
+    <path
+       style="fill:#666666;stroke:#000000;stroke-width:0.499999"
+       d="m 118.41725,150.8186 2.80499,-4.01668 2.28121,-2.52621 1.28445,-0.26945 0.28935,0.0421 44.25753,-0.1623 1.12548,0.32003 2.40371,2.78425 1.09148,3.4981 -55.04344,0.53807 z"
+       id="path1179-3" />
+    <path
+       style="fill:#666666;stroke:#000000;stroke-width:0.499999"
+       d="m 121.04274,146.7586 51.04189,-0.17846"
+       id="path1307-5" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.499999"
+       d="m 176.77278,151.92746 h 0.98657 l 1.73963,-1.68364 0.84354,-2.43378 0.6241,-3.32641 0.27437,-2.56752 -0.056,-2.87664 -1.87946,-1.33736 -2.243,-1.1142 -3.70904,-0.7581 -3.27467,0.11171 -1.52443,1.80411 -1.90414,1.98958 -0.76182,2.65853 -0.043,0.9473"
+       id="path1409-6" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.499999"
+       d="m 170.7775,144.23075 0.39032,-8.23138"
+       id="path1411-2" />
+  </g>
+</svg>

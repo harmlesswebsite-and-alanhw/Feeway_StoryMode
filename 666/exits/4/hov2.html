@@ -10,12 +10,12 @@
       <noscript>You can't play this either. Please go <a href="hovЗ.html">here</a>.</noscript>
       <div id="continue" hidden="hidden"><a href="hovЗ.html">Continue</a></div>
       <p>Win some dollhairs to pay off your speeding ticket.</p>
-      <p>Your balance: $<span id="balance">-4000</span> (fine + tax + someone gave you 1000 dollhairs)</p>
+      <p>Your balance: $<span id="balance">100</span> (fine + tax + someone gave you 1000 dollhairs)</p>
       <p>You also need $1000 to pay for the rest of the trip.</p>
       <label>Input a random 5 digit number:<br /><input id="num" /></label><input type="submit" value="(c)heck" onclick="if (document.querySelector('#num').value == globalThis.num) globalThis.balance += 1000; else globalThis.balance -= 1000; newNum(); document.querySelector('#num').value = ''; document.querySelector('#balance').textContent = balance; if (balance === 1000) {document.querySelector('input[type=submit]').disabled = 'disabled';document.querySelector('#continue').hidden = '';}" /><br />
       <label>cheat: type 'num' in this box: <input id="thing" /></label> <input type="button" value="show subproperty of window" onclick="alert(window[document.querySelector('#thing').value]);" />
       <script>
-          globalThis.balance = -4000;
+          globalThis.balance = 100;
           function newNum() {
               globalThis.num = Math.floor(Math.random() * 90000) + 10000;
           }

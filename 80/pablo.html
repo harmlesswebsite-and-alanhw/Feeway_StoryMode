@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+      <script src="../script.js"></script>
+    <title>Interstate 80</title>
+  </head>
+  <p>Whew ur back at I-80, but an animal messed with the radio and its saying random stuff. Reload the page as much as you want to find out what he is actually saying</p>
+  	  <p>OK, so in the <strong class="swear">????</strong> Park, there is this <strong class="swear">????</strong> is drinking all the pee from the restrooms</p>
+   <script>
+	   
+	   Array.prototype.random = function () {
+  return this[Math.floor((Math.random()*this.length))];
+}
+Array.from(document.querySelectorAll('.swear')).forEach(function(thing) {
+	// prick means penis btw
+		   thing.textContent = ['Amusement', 'Monke', 'Anus', 'toilet', 'poo', 'pee'].random();
+	   })
+   </script>
+  
+        </details>
+</p>
+      <label>Now, what animal messed with the radio<br />
+  <select name="answer" autocomplete="off">
+      <option disabled="disabled" selected="selected">Choose...</option>
+      <option>A Giraffe</option>
+		  <option value="Lawrence Expy and Morone St">A lion</option>
+		  <option value="Stevens Creek and Morone">A hooman</option>
+		  <option value="Morone and Chrome Dr.">A Monke</option>
+		  <option value="Lawrence St and Morone Way">A Doge</option>
+		  <option value="Bellomy and Morone">A cat</option>
+		  <option value="Morone St and Indio Blvd">An elephant</option>
+		  <option value="Morone St, Morone City">YOUR MOM</option>
+		  	  </select>
+      </label>
+	<button onclick="submit()" id="soobmit">Soobmit your answer</button>
+      <div id="youchose" hidden="hidden">
+          You chose
+          <b id="youchosei"></b>
+      </div>
+<div id="result" hidden="hidden">
+			<p>WRONG</p><p>Get Rickrolled</p>
+</div>
+      <div id="win" hidden="hidden"><p>Correct!</p>
+      <p><a href="monke.html">Continue</a></p>
+      </div>
+      <script>
+          function submit() {
+			  document.querySelector('#soobmit').style.display = 'none';
+              var index = document.querySelector('select').selectedIndex;
+              document.getElementById('win').hidden = 'hidden';
+            document.getElementById('result').hidden = 'hidden';
+              if (index === 4) {
+                  document.getElementById('win').removeAttribute('hidden');
+              } else {
+                  document.getElementById('result').removeAttribute('hidden');
+                  setTimeout(function() {
+                      location.href = '/rickroll40.html';
+                  }, 3000);
+              }
+              document.querySelector('select').disabled = 'disabled';
+              document.getElementById('youchose').style.display = 'block';
+              document.getElementById('youchosei').textContent = document.querySelector('select').options[document.querySelector('select').selectedIndex].textContent;
+              document.querySelector('label').style.display = 'none';
+          }
+      </script>
+</body>

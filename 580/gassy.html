@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+      <script src="../script.js"></script>
+    <title>Gas Wave</title>
+  </head>
+  <body>
+	  <fieldset>
+  <legend>The gas approaches, and you need to get 18 O2 molecules to get past. If you let too much bad gas in, well SAY GOODBYE.</legend>
+	  <!-- noo the game is 640 by 480 -->
+  <iframe src="https://canvas-test.weeklyd3.repl.co" width="700" height="535"></iframe>
+	  </fieldset>
+	  <script>
+		  window.onmessage = function(ev) {
+			  console.log('PARENT MESSAGE:', ev.data);
+			  if (ev.data.type === 'lose') {
+				  location.href = '/rickroll40.html';
+			  }
+			  if (ev.data.type === 'win') {
+				  location.href = 'gassy2.html';
+			  }
+		  }
+	 document.querySelector('iframe').onload = function() { document.querySelector('iframe').contentWindow.postMessage({'type': 'frame', 'content': 18}, '*');document.querySelector('iframe').contentWindow.postMessage({'type': 'goal', 'content': 18}, '*'); };</script>

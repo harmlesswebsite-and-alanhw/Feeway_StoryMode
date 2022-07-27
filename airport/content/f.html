@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+      <link href="../../../style.css" rel="stylesheet" type="text/css" />
+	<script src="../../../script.js"></script>
+	  <script src="../screen.js"></script>
+    <title>In flight</title>
+  </head>
+  <body>
+	  <h1>On the plane</h1>
+	  <div id="screen"></div>
+	  <script>
+		  const s = new Screen(document.querySelector('#screen'));
+		  (async () => {
+			  const frameRate = await input("Enter video frame rate (in milliseconds, 1000 recommended)", 1000, true);
+		  const commands = ["Loading kernel", "Load initramfs.img", "Initialize memory", "Check for bad memory", "Check for disk errors", "Load list of operating systems", "Init \"In-flight Operating System\"", "Init \"Feeway OS 3.0\"", "Init \"Recovery OS 5.0\"", "Autoboot OS 1 [hit F3 next time]", "Loading programs", "Started Apache httpd", "Started Automated Bug Report Tool", "Started kernel", "Loading user information...", "User information loaded", "Login: root", "Pass: ******", "Verifying", "Starting aircraft safety instructions", "Loading video", "Loading video player", "Buffering video", "Video buffered, starting playback.",  "Setting rate between frames: " + frameRate, "Connection lost - trying to download video..."];
+
+			  const startTime = new Date().getTime() / 1000;
+			  while (commands.length) {
+				  s.printf(`[${String(new Date().getTime() / 1000 - startTime).padStart(20, " ")}] `);
+				  const cmd = commands.shift();
+				  if (cmd === "Autoboot OS 1 [hit F3 next time]") globalThis.noheck = true;
+				  s.print(cmd);
+				  await s.wait(Math.random() / 2)
+			  }
+			  fetch('../video.txt')
+			  .then((text) => text.text())
+			  .then((items) => {
+				  const slides = items.split("\nnew slide\n");
+				  setInterval(() => {
+					  if (!slides.length) return;
+					  s.clear();
+					  s.print(slides.shift());
+				  }, frameRate);
+			  })
+			  .catch((err) => {
+				  s.print(`${"ERROR WHILE DOWNLOADING VIDEO: "}${err}`);
+			  })
+		  })();
+		  document.onkeydown = function(ev) {
+			  if (ev.keyCode === 114 && !globalThis.noheck) location.href = 'g.html';
+		  }
+	  </script>
+  </body></html>

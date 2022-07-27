@@ -7,6 +7,7 @@
   <title id="taitl">RICKROLLS!!!</title>
   <meta name="google-site-verification" content="rxU_MqzKM1omI-d0jbR8BiLvCtsS88CKiqGechKZCDQ">
   <link rel="canonical" href="https://harmlesswebsite.leoshi6.repl.co">
+	<script src="/script.js"></script>
 </head>
 
 <body id="baudy" cz-shortcut-listen="true">
@@ -44,6 +45,10 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen="" frameborder="0"></iframe>
     </div>
+	  <script>	
+		var death = Number(localStorage.getItem('death-counter') ?? '0');
+		death++;
+		localStorage.setItem('death-counter', death);</script>
       <script>globalThis.nofooter = true</script>
     <style>
       iframe {

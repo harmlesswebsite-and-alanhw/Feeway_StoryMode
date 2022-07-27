@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+      <link href="../../../style.css" rel="stylesheet" type="text/css" />
+	<script src="../../../script.js"></script>
+	  <script src="../screen.js"></script>
+    <title>Boarding Times</title>
+  </head>
+  <body>
+	  <h1>Boarding time</h1>
+	  <p>(c)heck the screen below to check your boarding times.</p>
+	  <div class="screen" id="scr"></div>
+	  <script>const s = new Screen(document.querySelector('#scr'));
+		  globalThis.times = {
+			  "First Class": 15,
+			  "BS Class": 30,
+			  "Economy Class": 45,
+			  "Crappy Poop Class": 60
+		  };
+	  // you are not expected to understand this.
+	(async () => {
+		s.clear();
+		setInterval(() => {
+			delete globalThis.boardingNow;
+			s.clear();
+			s.print(`Pee Pee Airlines`);
+			s.print(`Flight 6688 - San Francisco International (SFO) to Sacramento International (SMF)`);
+			s.print("Boarding times (up to date within 1 sec)");
+			s.print(`--------------------`);
+			Object.keys(globalThis.times).forEach((key) => {
+				const value = times[key];
+				if (value > 0) s.print(`${key}: ${value} seconds left until boarding`);
+				if (value <= 0 && value > -15) {
+					s.print(`${key}: BOARDING NOW`);
+					globalThis.boardingNow = key;
+				}
+				if (value <= -15) s.print(`${key}: Boarding ended. Sucks to be you.`);
+				globalThis.times[key]--;
+				if (globalThis.boardingNow === "Crappy Poop Class") document.querySelector('#board').href = 'e.html';
+				else document.querySelector('#board').href = '/rickroll40.html';
+			})
+			s.print(``);
+			
+		}, 1000);
+	})();
+	  </script>
+   <p>You are in Crappy Poop Class. Good luck.</p>
+   <p>Press the button below when you can board:</p>
+   <a class="fakebutton" href="/rickrollairport.html" id="board">Enter</a>
+   <a class="fakebutton" href="/rickrollairport.html" id="board">Speed up the dum loading thing</a>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+      <link href="../../../style.css" rel="stylesheet" type="text/css" />
+	<script src="../../../script.js"></script>
+	  <script src="../screen.js"></script>
+    <title>In flight (hecked)</title>
+  </head>
+  <body>
+	  <h1>On the plane</h1>
+	  <div id="screen" class="screen"></div>
+	  <div id="recoveryOS" class="screen gui" style="display: none;"><iframe width=480 height=360 src="../recoveryos.html" title="Recovery OS window"></iframe></div>
+	  <script>
+		  const s = new Screen(document.querySelector('#screen'));
+		  (async () => {
+			  s.print("F3 was hit. Autoboot was interrupted.");
+			  s.print("Starting recovery entry: Recovery OS 5.0");
+			  await s.wait(1);
+			  document.querySelector('#screen').style.display = 'none';
+			  document.querySelector('#recoveryOS').style.display = 'block';
+		  })();
+</script>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+      <script src="../script.js"></script>
+    <title>US-101</title>
+	  <style>
+		  .cheat-indicator {
+			  animation: scary 5s infinite;
+		  }
+		  @keyframes scary {
+			  0%, 100% { filter: invert(1); }
+			  50% { filter: none; }
+		  }
+		  #nodecode {
+			  position: fixed;
+			  top: 50%;
+			  left: 50%;
+			  transform: translate(-50%, -50%);
+			  text-align: center;
+			  padding: 7px;
+			  font-size: 70px;
+			  font-family: sans-serif;
+			  color: gray;
+			  color: red;
+			  z-index: -2;
+		  }
+		  #nodecode div {
+			  transform: rotate(45deg);
+		  }
+	  </style>
+  </head>
+  <body>
+	  <h1>On US-101</h1>
+	  <p>There are so many farts here. Pfft, pfft, pfft.</p>
+	  <details>
+		  <summary>Key for decoding this page (only relevant if you have JavaScript)</summary>
+		  <p>The number of f's after a p makes the letter in the alphabet. 2 fs = a, 27 fs = z. A dash marks a different word.</p>
+	  </details>
+	  <div id="encode"><p>Hello. Can you read this? Are you an idiot? Because this is all farts. Anyways,</p>
+	  <p>When you were driving on the highway US-101, there was this monke that came up to you. The monke blocked US-101, so you have to go to the airport now.</p>
+	  <p>It is exit 422. Good luck. Please exit or your pee and all of the airport toilets will get emptied into the monke.</p>
+	  <p>And here, just to troll you, are a bunch of Z's:</p>
+	  <p>zzzzzzzzxyzzzxxxzzzzzyzxzzzzzzzzxzzyzx</p>
+	  <p>Okay, guess I lied. Some of them were y's and x's.</p>
+	  <p>Oh, and...</p>
+	  <p>If you ever need a code to enter the airport, here it is: 3328.</p>
+	  <p>Remember. 3328 not 1234.</p>
+	  <p>1234 is not 12зч.</p></div>
+	  <div id="nodecode" style="display: none;"><div>THIS PERSON CHEATED</div></div>
+	  <p><a href="farthead.html?nodecode=yes+yes+yes+i+want+to+cheat">QUICK! QUICK! QUICK! CHEAT!</a></p>
+	  <script>
+		  const l = 'abcdefghijklmnopqrstuvwxyz'.split('');
+		  if (new URL(location.href).searchParams.get('nodecode')) { document.querySelector('#nodecode').style.display = 'block';
+																	document.body.classList.add('cheat-indicator');
+																   }
+		  Array.from(document.querySelectorAll('#encode p')).forEach((text) => {
+			  if (new URL(location.href).searchParams.get('nodecode')) return;
+			  var sentences = text.textContent.split('. ');
+			  sentences = sentences.map((sentence) => {
+				  var words = sentence.split(' ');
+				  words = words.map(function(word) {
+					  var letters = word.split('');
+					  letters = letters.map(function(letter) {
+						  if (l.indexOf(letter.toLowerCase()) === -1) return letter;
+						  return `pff${"f".repeat(l.indexOf(letter.toLowerCase()))}t`;
+					  });
+					  return letters.join(' ');
+				  });
+				  return words.join('-');
+			  })
+			  text.textContent = sentences.join('. ');
+		  })
+	  </script>
+	  <div class=signs>
+		  <a href="/rickroll40.html">
+		  <div class=highwaysign>
+			  <div class=contents>
+			  <img src="/shields/101.svg" alt="US-101 North" height="30" /><br />
+			  San Francisco
+				  <style>.pad {display:flex;}.pad img {padding-left: 22px; padding-right: 22px;}</style>
+				  <div class=pad>
+			  <img src="/img/south.svg" alt="left four lanes" />
+			  <img src="/img/south.svg" alt="" />
+			  <img src="/img/south.svg" alt="" />
+			  <img src="/img/south.svg" alt="" />
+				  </div>
+			  </div>
+		  </div>
+		  </a>
+		  <a href="airport.html">
+		  <div class=highwaysign>
+			  <div class="exit-number">Exit 422</div>
+			  <div class="contents" style="padding-left: 30px; padding-right: 30px;">S F Int'l Airport
+			  <div class=miles>
+				  <img src="/img/ne.svg" alt="Two right lanes" style="padding-left: 7; padding-right: 15px;" />
+				  <img src="/img/ne.svg" style="padding-left: 7px; padding-right: 7px;" alt="" />
+				  <img src="/img/exitonlywords.svg" style="padding-left: 7px; padding-right: 7px;" alt="" />
+			  </div>
+			  </div>
+		  </div>
+		  </a>
+	  </div>
+  </body>
+</html>

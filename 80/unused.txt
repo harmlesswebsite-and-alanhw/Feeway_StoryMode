@@ -1,0 +1,13 @@
+
+  <p>You take the vista point.</p>
+  <p>The ocean looks really beautiful. You can see Alcatraz Island and the Bay Bridge from there.</p>
+  <p>oh, and...</p>
+		<figure>
+			<audio controls="controls" src="../branch101/psa.mp3"></audio>
+			<figcaption>A news excerpt</figcaption>
+		</figure>
+  <details><summary>Transcript</summary><pre>Emergency pubic<note>[sic]</note> service announcement. All visitors
+on the Sausalito vista point must exit immediately.
+A monkey has been spotted there. It is know to drink
+your pee. Disclaimer: This is fake.
+</pre></details>

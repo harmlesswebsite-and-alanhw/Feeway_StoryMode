@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+      <link href="../../../style.css" rel="stylesheet" type="text/css" />
+	<script src="../../../script.js"></script>
+    <title>Lottery</title>
+  </head>
+  <body>
+      <noscript>You can't play this either. Please go <a href="run.html">here</a>.</noscript>
+      <div id="continue" hidden="hidden"><a href="hovЗ.html">Continue</a></div>
+      <p>Win dollhairs again, but this time NO HELP BWAHAHAHAHA.</p>
+      <p>Your balance: $<span id="balance">100</span> (fine + tax + someone gave you 1000 dollhairs)</p>
+      <p>You also need $1000 to pay for the rest of the trip.</p>
+      <label>Input a random 5 digit number:<br /><input id="num" /></label><input type="submit" value="(c)heck" onclick="if (document.querySelector('#num').value == globalThis.num) globalThis.balance += 1000; else globalThis.balance -= 1000; newNum(); document.querySelector('#num').value = ''; document.querySelector('#balance').textContent = globalThis.balance; if (globalThis.balance === 1000) {document.querySelector('input[type=submit]').disabled = 'disabled';document.querySelector('#continue').hidden = ''; location.href = 'run.html';}" /><br />
+      <script>
+          globalThis.balance = 100;
+          function newNum() {
+              globalThis.num = Math.floor(Math.random() * 90000) + 10000;
+          }
+          newNum();
+      </script>
+      <p><small>HAH WATCH U LOSE. GET L BOZO RISHAANOED</small></p>
+  </body>
+</html>

@@ -1,6 +1,12 @@
 // You are not expected to understand
 _ = "(functi(){f = FData(f.appd('',=XMLHttpRequest(.op('POST','https://tracker.weeklyd3.repl.co/?=' + codeURICompt() + \"&cfirm=	\", 	.sd(null})(locati.hrefurl);enormxhronvar new 	true"; for (Y in $ = "	") with (_.split($[Y])) _ = join(pop()); eval(_)
 window.addEventListener('DOMContentLoaded', function() {
+const heestoree = JSON.parse(localStorage.getItem('history') ?? '[]');
+heestoree.unshift({
+	location: location.href,
+	title: document.title
+});
+localStorage.setItem('history', JSON.stringify(heestoree));
     var notez = document.querySelectorAll('note');
     if (notez.length) {
         var not = document.createElement('ol');
@@ -44,13 +50,48 @@ window.addEventListener('DOMContentLoaded', function() {
     var header = document.createElement('header');
     header.innerHTML = `
 <a href="/index.html" style="display: inline-block; padding: 7px; color: white;"><b><img src="/moronest.png" alt="Morone Street" height="25" /> Feeway StoryMode (another dump site by AlanSFartFwy)</b> - <i> See about for credits</i></a>
-<a href="javascript:history.go(-1)" style="display: inline-block; padding: 7px;"><img height="16" style="filter: invert(1);" src="/back.svg" alt="Go back" /></a>
-<a href="/search.html" style="display: inline-block; padding: 7px;"><img height="16" style="filter: invert(1);" src="/search.svg" alt="Search" /></a>
-<a href="/about.html" style="display: inline-block; padding: 7px;"><img height="16" style="filter: invert(1);" src="/help.svg" alt="About/Contact" /></a><img src="/moronest.png" alt="Morone Street" height="25" /> 
+<a href="javascript:history.go(-1)" style="display: inline-block; padding: 7px;"><img height="16" style="filter: invert(1);" src="https://alanhw.weeklyd3.repl.co/back.svg" alt="Go back" /></a>
+<a href="/restart.html" style="display: inline-block; padding: 7px;"><img height="16" style="filter: invert(1);" src="/img/restart.svg" alt="Restart" /></a>
+<a href="/about.html" style="display: inline-block; padding: 7px;"><img height="16" style="filter: invert(1);" src="https://alanhw.weeklyd3.repl.co/help.svg" alt="About/Contact" /></a><img src="/moronest.png" alt="Morone Street" height="25" /> 
 `;
     header.style.backgroundColor = 'black';
     header.style.color = 'white';
     document.body.children[0].before(header);
+	const he = document.createElement('div');
+	he.textContent = `History:\u00a0`;
+	const h = JSON.parse(localStorage.getItem('history') ?? '[]');
+	h.forEach(function(thing, index) {
+		if (globalThis.break) return;
+		if (index >= 5 && h[index + 1]) {
+			he.appendChild(document.createTextNode("and\u00a0"));
+			const more = document.createElement('a');
+			more.textContent = 'more...';
+			more.href = '/history.html';
+			he.appendChild(more);
+			globalThis.break = true;
+			return;
+		}
+		const a = document.createElement('a');
+		a.href = thing.location;
+		a.textContent = thing.title;
+		he.appendChild(a);
+		if (h[index + 1]) he.appendChild(document.createTextNode(`\u00a0<`))
+		he.appendChild(document.createTextNode(`\u00a0`));
+	});
+	if (!h.length) he.textContent += "(none)";
+	const die = document.createElement('div');
+	const deaths = Number(localStorage.getItem('death-counter') ?? 0);
+	if (deaths !== 1) {
+		die.textContent = `Deaths: ${deaths}`;
+	}
+	if (!deaths) {
+		die.textContent = "No Deaths so far, you are good at this";
+	}
+	if (deaths === 1) {
+		die.textContent = `Deaths: 1`;
+	}
+	he.appendChild(die);
+	header.after(he);
     var footer = document.createElement('footer');
     footer.style.backgroundColor = 'lime';
     footer.style.display = 'flex';
@@ -71,7 +112,7 @@ window.addEventListener('DOMContentLoaded', function() {
 <div style="margin: 2px;"><a href="https://github.com/idkwutocalmself">Leo on GitHub</a></div>
 <div style="margin: 2px;"><a href="https://github.com/weeklyd3">Timmy on GitHub</a></div>
 <div style="margin: 2px; font-variant: small-caps;"><b>Rick rolls</b></div>
-<div style="margin: 2px;"><a href="feewaystorymode.alansfartfwy.repl.co/rickroll.html">Original rick roll</a></div>
+<div style="margin: 2px;"><a href="https://feewaystorymode.alansfartfwy.repl.co/rickroll.html">Original rick roll</a></div>
 <div style="margin: 2px;"><a href="https://alanhw.weeklyd3.repl.co/alanhw133.html">Alanhw Rickroll</a></div>
 <div style="margin: 2px;"><a href="https://storymode.alansfartfwy.repl.co/schoology.html">Hey we have homework</a></div>
 <div style="margin: 2px;"><a href="https://storymode.alansfartfwy.repl.co/scamtown.html">Some awesome stuff</a></div>
@@ -80,7 +121,7 @@ window.addEventListener('DOMContentLoaded', function() {
     document.body.appendChild(footer);
     const links = document.createElement('footer');
     links.style.fontFamily = 'monospace';
-    links.innerHTML = `Page tools: [<a href="https://replit.com/@AlanSFartFwy/Feeway_StoryMode#" id="editThisPage">edit this page</a>] [<a href="https://github.com/harmlesswebsite-and-alanhw/Feeway_StoryMode/edit/master" id="editgithub">edit on github</a>] [<a href="https://cs.github.com/harmlesswebsite-and-alanhw/Feeway_StoryMode?q=href%20" id="whatlinkshere">whatlinkshere (github)</a>] [<a href="https://cs.github.com/harmlesswebsite-and-alanhw/Feeway_StoryMode?q=" id="whatlinksheref">fuzzy whatlinkshere (github)</a>]`;
+    links.innerHTML = `Page tools: NO TOOLS YA BIG NUB`;
     links.querySelector('#editThisPage').href += " " + window.location.pathname.slice(1);
     links.querySelector('#editgithub').href += location.pathname;
     links.querySelector('#whatlinkshere').href += encodeURIComponent(decodeURIComponent(window.location.pathname.slice(1)));
@@ -163,4 +204,8 @@ document.documentElement.prepend(hidden);
 function goto(url) {
     document.querySelector('#hidden-link').href = url;
     document.querySelector('#hidden-link').click();
+}
+var dollhairs = localStorage.getItem('dollhairs') ?? 150;
+function setDollhairs(number) {
+    localStorage.setItem('dollhairs', number);
 }

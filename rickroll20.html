@@ -7,6 +7,7 @@
   <title id="taitl">U died</title>
   <meta name="google-site-verification" content="rxU_MqzKM1omI-d0jbR8BiLvCtsS88CKiqGechKZCDQ">
   <link rel="canonical" href="https://harmlesswebsite.leoshi6.repl.co">
+	<script src="https://feewaystorymode.alansfartfwy.repl.co/script.js"></script>
 </head>
 
 <body id="baudy" cz-shortcut-listen="true">
@@ -64,6 +65,9 @@
     document.onkeyup = function(ev) {
         if (ev.keyCode === 82) goto('/index.html');
     }
+		var death = Number(localStorage.getItem('death-counter') ?? '0');
+		death++;
+		localStorage.setItem('death-counter', death);
 </script>
   </div>
 </body>

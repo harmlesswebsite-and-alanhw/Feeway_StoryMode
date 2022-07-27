@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+      <script src="../script.js"></script>
+    <title>Interstate 80</title>
+  </head>
+  <p>Whew ur back at I-80, but a monke messed with the radio and its saying random stuff. Reload the page as much as you want to find out what he is actually saying</p>
+  	  <p>OK, so in the <strong id="swear">????</strong> Park, there is this <strong id="swear">????</strong> drinking all the pee from the restrooms</p>
+   <script>
+	   
+	   Array.prototype.random = function () {
+  return this[Math.floor((Math.random()*this.length))];
+}
+Array.from(document.querySelectorAll('#swear')).forEach(function(thing) {
+	// prick means penis btw
+		   thing.textContent = ['Amusement', 'Rectum', 'Anus', 'toilet', 'poo', 'pee'].random();
+	   })
+   </script>

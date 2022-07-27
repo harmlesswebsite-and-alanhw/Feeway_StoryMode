@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>History</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+	<script src="script.js"></script>
+</head>
+
+<body>
+	<h1>Rest stop!</h1>
+	<p>You pull into the rest stop after a long day of driving.</p>
+	<p>You can view your progress below.</p>
+	<hr />
+	<p>ALL RIGHT, you asked for your history, HERE IT IS.</p>
+ <p>If you are ashamed about your progress and wish to reset everything...</p>
+ <button onclick="if (confirm('SURE?')) {localStorage.clear(); location.reload();}">CLICK HERE</button>
+ <p>Look, we've even turned it into a nice button so you can click it with minimal effort.</p>
+ <p>Below is your actual history.</p>
+	<div style="float: right;">
+		<button onclick="loadHistory(offset - 100)" disabled="disabled" id="prev">&larr; prev</button>
+		<button onclick="loadHistory(offset + 100)" disabled="disabled" id="next">next &rarr;</button>
+	</div>
+		 <div class="header">Showing <strong id="num">100</strong> from #<strong id="start"></strong> to <strong id="to"></strong> out of <strong id="total"></strong></div>
+	<ol id="history"></ol>
+   <div class="header">HIT NEXT!</div>
+   <script>
+	   const heestoree = JSON.parse(localStorage.getItem('history') ?? '[]')
+	   function loadHistory(start) {
+		   document.querySelector('#history').setAttribute('start', start + 1);
+		   const length = heestoree.length;
+		   document.querySelector('#start').textContent = start + 1;
+		   document.querySelector('#to').textContent = ((start + 100) < length) ? (start + 100) : length;
+		   document.querySelector('#total').textContent = length;
+		   document.querySelector('#history').textContent = '';
+		   globalThis.offset = start;
+		   document.querySelector('#prev').disabled = '';
+		   document.querySelector('#next').disabled = '';
+		   if (!start) document.querySelector('#prev').disabled = 'disabled';
+		   if ((start + 100) > length) document.querySelector('#next').disabled = 'disabled';
+		   const show = heestoree.slice(offset, offset + 100);
+		   show.forEach((item) => {
+			   const i = document.createElement('li');
+			   const a = document.createElement('a');
+			   a.textContent = item.title;
+			   a.href = item.location;
+			   i.appendChild(a);
+			   i.appendChild(document.createTextNode(":\u00a0" + item.location));
+			   document.querySelector('#history').appendChild(i);
+		   })
+	   }
+	   loadHistory(0);
+   </script>

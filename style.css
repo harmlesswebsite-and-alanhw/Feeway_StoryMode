@@ -7,7 +7,11 @@ button, select, input, textarea {
 }
 @font-face {
   font-family: Roadgeek;
-  src: url(roadgeekFont.ttf) format("truetype");
+  src: url("/roadgeekFont.ttf") format("truetype");
+}
+@font-face {
+	font-family: "TerminusTTF";
+	src: url("/terminal-font/TerminusTTF-4.49.2.ttf") format("truetype");
 }
 .highwaysign {
     font-family: Roadgeek;
@@ -95,7 +99,47 @@ img { max-width: 100%; }
 .fakebutton:hover {
     background-color: rgb(208, 208, 215);
 }
-@media (prefers-color-scheme: dark) {html, img, video {
+@media (prefers-color-scheme: dark) {html, img, video, iframe {
     filter: hue-rotate(180deg) invert(1);
 }
                                     }
+.note:target, note:target sup a {
+	animation-fill-mode: forwards;
+	animation-name: fadegold;
+	animation-duration: 3s;
+}
+
+@keyframes fadegold {
+	0% {
+		background-color: gold;
+	}
+	100% {
+		background-color: unset;
+	}
+}
+.screen {
+	border: 5px solid blue;
+	width: 480px;
+	height: 360px;
+	overflow: auto;
+	white-space: pre-wrap;
+}
+.screen:not(.gui) {
+	overflow: hidden;
+	font-family: TerminusTTF, monospace;
+	background-color: black;
+	color: white;
+}
+.nobullet {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.zebra > *:nth-child(odd) {
+	background-color: white;
+	color: black;
+}
+.zebra > *:nth-child(even) {
+	background-color: black;
+	color: white;
+}

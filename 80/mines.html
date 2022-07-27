@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+      <script src="../script.js"></script>
+    <title>Lots of mines</title>
+  </head>
+  <body>
+  <p>You go on mines road and find out that there are a lot of mines. If you hover your mouse over a mine labled <kbd>X</kbd> then you get rickrolled</p>
+  <p>You can hover your mouse over <kbd>O</kbd> blocks</p>
+	  <p>Guess I lied. Hover over ALL of the O blocks to win.</p>
+  <noscript><a href="ca4.html">I dont have javascript enabled, I cant play this.</a></noscript>
+<div id="game-root"></div>
+   <script>
+	   const rows = 12;
+		   globalThis.done = 0;
+  const row = Math.round(Math.random() * rows);
+	const col = Math.round(Math.random() * rows);
+  const row2 = Math.round(Math.random() * rows);
+	const col2 = Math.round(Math.random() * rows);  const row3 = Math.round(Math.random() * rows);
+	const col3 = Math.round(Math.random() * rows);
+  const row4 = Math.round(Math.random() * rows);
+	const col4 = Math.round(Math.random() * rows);
+  const row5 = Math.round(Math.random() * rows);
+	const col5 = Math.round(Math.random() * rows);
+	   for (var i = 0; i < rows; i++) {
+		   const r = document.createElement('div');
+		   for (var j = 0; j < rows; j++) {
+			   const b = document.createElement('button');
+			   b.textContent = 'O';
+			   if ((i === row && j === col) || (i === row2 && j === row2) || (i === row3 && j === col3) || (i === row4 && j === col4) || (i === row5 && j === col5)){ b.textContent = 'X';
+										   b.style.backgroundColor = 'red';
+										  }
+			   if ((i === row && j === col) || (i === row2 && j === row2) || (i === row3 && j === col3) || (i === row4 && j === col4) || (i === row5 && j === col5)) b.addEventListener('mouseenter', () => {this.textContent = '!';location.href = '/rickroll40.html'});
+			   else b.addEventListener('mouseenter', function() { this.style.backgroundColor = 'lime'; this.textContent = '✓'; globalThis.done++;this.parentNode.replaceChild(this.cloneNode(true), this); if (globalThis.done === (rows * rows - 5)) location.href = 'ca4.html'});
+			   r.appendChild(b);
+		   }
+		   document.querySelector('#game-root').appendChild(r);
+	   }
+   </script> 
+  </body>

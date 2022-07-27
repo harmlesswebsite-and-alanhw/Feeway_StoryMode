@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <link href="../style.css" rel="stylesheet" type="text/css" />
+      <script src="../script.js"></script>
+    <title>EAT LEAD ROBBER</title>
+  </head>
+  <body>
+      <p>You have 25 dollhairs.</p>
+    <p>Just as you were driving on the freeway, you hear cars screaming at you.</p>
+<p>Someone comes onto your car and starts stealing ur dollhairs</p>
+      <p>Oh no, now every second, you lose a dollhair.</p>
+      <p>Dollhairs Remaining: <span id="money">25</span></p>
+      <script>
+          setDollhairs(25);
+          dollhairs = 25;
+          setInterval(function() {
+              if (!dollhairs) location.href = '/rickroll30.html';
+              setDollhairs(--dollhairs);
+              document.querySelector('#money').textContent = (`${dollhairs}`).replaceAll('3', 'З').replaceAll('4', 'Ч').replaceAll('6', 'б').replaceAll('0', 'О');
+          }, 1000);
+      </script>
+  <p>What should you do?</p>
+  <p><a href="lotto.html">Win the Lottery</a></p>
+  <p><a href="run.html">Run away from the robber</a></p>
+  </body>
